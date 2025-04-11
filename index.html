@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>urcauz | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * {
@@ -17,27 +17,30 @@
       background: #0d0d0d;
       color: #fff;
       min-height: 100vh;
-      background-attachment: fixed;
       overflow-x: hidden;
+      scroll-behavior: smooth;
+      position: relative;
     }
-    body::before {
-      content: '';
+    #bg-embed {
       position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: url('https://media.tenor.com/1kTBUi34XwwAAAAC/night-city.gif') center center / cover no-repeat;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
       z-index: -1;
-      opacity: 0.3;
-      filter: blur(3px);
+      opacity: 0.15;
+      filter: blur(3px) grayscale(0.2);
+      pointer-events: none;
     }
     header {
       text-align: center;
-      padding: 80px 20px 40px;
+      padding: 100px 20px 40px;
     }
     h1 {
       font-family: 'Orbitron', sans-serif;
-      font-size: 3rem;
+      font-size: 3.5rem;
       color: #7f3fbf;
-      text-shadow: 0 0 8px #7f3fbf;
+      text-shadow: 0 0 10px #7f3fbf;
       animation: glow 3s ease-in-out infinite alternate;
     }
     @keyframes glow {
@@ -48,64 +51,15 @@
         text-shadow: 0 0 20px #e600ff;
       }
     }
-    p {
-      font-size: 1.2rem;
-      margin-top: 10px;
-      color: #ccc;
-    }
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 40px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .card {
-      background: rgba(0,0,0,0.75);
-      border: 1px solid #7f3fbf;
-      border-radius: 12px;
-      padding: 20px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      backdrop-filter: blur(8px);
-      cursor: pointer;
-    }
-    .card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px #7f3fbfaa;
-    }
-    .card h3 {
-      margin-bottom: 10px;
-      color: #fff;
-    }
-    .card p {
-      font-size: 0.95rem;
-      color: #aaa;
-    }
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      font-size: 0.9rem;
-      color: #888;
-    }
-    a {
-      color: #7f3fbf;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
     .typewriter {
-      width: 100%;
-      text-align: center;
-      font-size: 1.2rem;
-      padding-top: 10px;
+      font-size: 1.3rem;
       color: #ccc;
+      margin-top: 10px;
       overflow: hidden;
       white-space: nowrap;
       border-right: 3px solid #7f3fbf;
-      animation: typing 3.5s steps(40, end), blink 0.75s step-end infinite;
-      max-width: 80vw;
+      animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
+      width: 0;
       margin: auto;
     }
     @keyframes typing {
@@ -115,36 +69,132 @@
     @keyframes blink {
       50% { border-color: transparent; }
     }
+    nav {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+    }
+    nav a {
+      margin: 0 15px;
+      color: #aaa;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #fff;
+    }
+    section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: rgba(0,0,0,0.8);
+      border: 1px solid #7f3fbf;
+      border-radius: 14px;
+      padding: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      backdrop-filter: blur(10px);
+      cursor: pointer;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #7f3fbf88;
+    }
+    .card h3 {
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .card p {
+      color: #bbb;
+    }
+    .tech-stack {
+      text-align: center;
+      font-size: 1.1rem;
+    }
+    .tech-icons {
+      margin-top: 20px;
+    }
+    .tech-icons img {
+      width: 40px;
+      margin: 0 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 60px 20px 30px;
+      color: #777;
+      font-size: 0.9rem;
+    }
+    a {
+      color: #7f3fbf;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
+  <div id="bg-embed">
+    <div class="tenor-gif-embed" data-postid="27397660" data-share-method="host" data-aspect-ratio="2.23776" data-width="100%">
+      <a href="https://tenor.com/view/night-city-gif-27397660">Night City GIF</a> from <a href="https://tenor.com/search/night+city-gifs">Night City GIFs</a>
+    </div>
+  </div>
+  <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+  <nav>
+    <a href="#projects">Projects</a>
+    <a href="#stack">Stack</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
   <header>
     <h1>&lt;/urcauz&gt;</h1>
-    <div class="typewriter">Full Stack Dev. Design nerd. Constantly caffeinated ☕</div>
+    <div class="typewriter">You're now serving full stack & full style ☕</div>
   </header>
 
-  <section class="projects">
+  <section id="projects" class="projects">
     <div class="card">
       <h3><i class="fas fa-tools"></i> Productivity App</h3>
-      <p>A full-stack web app for managing habits & tasks. Built using Next.js, TypeScript & Firebase.</p>
+      <p>Full-stack habit tracker built with Next.js, TypeScript, and Firebase.</p>
     </div>
     <div class="card">
       <h3><i class="fas fa-puzzle-piece"></i> Chrome Extension</h3>
-      <p>Browser add-on for boosting tab productivity and quick notes with localStorage.</p>
+      <p>Browser add-on to boost tab focus and jot down quick notes locally.</p>
     </div>
     <div class="card">
       <h3><i class="fas fa-paint-brush"></i> UI Components</h3>
-      <p>Reusable Tailwind component collection for fast prototyping and responsive layouts.</p>
+      <p>Snappy reusable components powered by TailwindCSS and Vite.</p>
     </div>
     <div class="card">
-      <h3><i class="fas fa-code"></i> GitHub Readme Generator</h3>
-      <p>Custom markdown builder with style presets, cyber themes, and deployment ready README files.</p>
+      <h3><i class="fas fa-code"></i> README Generator</h3>
+      <p>Create cyber-styled README files with live previews and deploy-ready output.</p>
     </div>
   </section>
 
+  <section id="stack" class="tech-stack">
+    <h2>💻 Tech Stack</h2>
+    <div class="tech-icons">
+      <img src="https://skillicons.dev/icons?i=js,ts,react,nextjs,nodejs,tailwind,html,css,cpp,python" alt="tech stack"/>
+    </div>
+  </section>
+
+  <section id="contact" class="tech-stack">
+    <h2>📫 Contact</h2>
+    <p>Let's build something cool — <a href="mailto:urcauzz@gmail.com">urcauzz@gmail.com</a></p>
+    <p>Or slide into <a href="https://discord.gg/uujW9psSvt">my Discord</a></p>
+  </section>
+
   <footer>
-    Made with 💻 by <a href="https://github.com/urcauz" target="_blank">@urcauz</a><br>
-    Hosted on <a href="https://urcauz.github.io">GitHub Pages</a>
+    <p>Made with 💻 & ⚡ by <a href="https://github.com/urcauz" target="_blank">@urcauz</a></p>
+    <p>🚀 Hosted on <a href="https://urcauz.github.io">GitHub Pages</a></p>
   </footer>
 </body>
 </html>
