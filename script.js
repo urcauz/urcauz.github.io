@@ -1,15 +1,14 @@
+const sections = document.querySelectorAll('.section');
 
-const text = "All-time caffeinated, full stack & full style ☕";
-let i = 0;
-const speed = 50;
-const el = document.getElementById("typewriter");
+const revealOnScroll = () => {
+  const triggerBottom = window.innerHeight / 1.2;
+  sections.forEach(section => {
+    const sectionTop = section.getBoundingClientRect().top;
+    if (sectionTop < triggerBottom) {
+      section.classList.add('visible');
+    }
+  });
+};
 
-function typeWriter() {
-  if (i < text.length) {
-    el.innerHTML += text.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
-  }
-}
-
-typeWriter();
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
