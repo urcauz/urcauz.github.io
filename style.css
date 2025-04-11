@@ -1,0 +1,86 @@
+
+body {
+  font-family: 'Share Tech Mono', monospace;
+  background: #0d0d0d;
+  color: #fff;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+#bg-video {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  filter: blur(2px) brightness(0.4);
+}
+header {
+  text-align: center;
+  padding: 120px 20px 40px;
+}
+h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 4rem;
+  color: #7f3fbf;
+  text-shadow: 0 0 15px #7f3fbf;
+}
+.typewriter {
+  border-right: .15em solid #7f3fbf;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 20px auto;
+  letter-spacing: 0.1em;
+  font-size: 1.4rem;
+  width: fit-content;
+}
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+.card {
+  background: rgba(20, 0, 30, 0.8);
+  border: 1px solid #7f3fbf;
+  border-radius: 14px;
+  padding: 20px;
+  backdrop-filter: blur(8px);
+}
+.tech-stack {
+  text-align: center;
+  padding: 60px 20px;
+}
+.tech-icons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.tech-icons img {
+  width: 60px;
+  filter: drop-shadow(0 0 5px #7f3fbf);
+}
+.terminal-contact {
+  max-width: 600px;
+  margin: 50px auto;
+  background: rgba(0,0,0,0.7);
+  border: 2px solid #7f3fbf;
+  border-radius: 10px;
+  padding: 30px;
+  color: #0f0;
+}
+footer {
+  text-align: center;
+  padding: 60px 20px;
+  font-size: 0.9rem;
+}
+a {
+  color: #7f3fbf;
+}
+.prompt {
+  color: #7f3fbf;
+}
