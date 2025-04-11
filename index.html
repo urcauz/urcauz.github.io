@@ -3,195 +3,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>urcauz | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Share Tech Mono', monospace;
-      background: #0d0d0d;
-      color: #fff;
-      overflow-x: hidden;
-    }
-
-    #bg-embed {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1;
-      filter: blur(6px) brightness(0.4);
-      object-fit: cover;
-    }
-
-    header {
-      text-align: center;
-      padding: 100px 20px 40px;
-      animation: fadeIn 1.5s ease-in;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 3.5rem;
-      color: #7f3fbf;
-      text-shadow: 0 0 12px #7f3fbf;
-      animation: glow 2.5s ease-in-out infinite alternate;
-    }
-
-    h2.tagline {
-      color: #aaa;
-      font-size: 1.3rem;
-      margin-top: 10px;
-      font-style: italic;
-      opacity: 0.8;
-    }
-
-    .typewriter {
-      color: #ccc;
-      font-size: 1.2rem;
-      overflow: hidden;
-      white-space: nowrap;
-      border-right: 2px solid #7f3fbf;
-      width: 0;
-      margin: 20px auto;
-      animation: typing 5s steps(40, end) forwards, blink 0.75s step-end infinite;
-    }
-
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 80vw; }
-    }
-
-    @keyframes blink {
-      50% { border-color: transparent; }
-    }
-
-    section {
-      padding: 80px 20px;
-      max-width: 1200px;
-      margin: auto;
-      animation: fadeIn 1.5s ease-in;
-    }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: rgba(0, 0, 0, 0.8);
-      border: 1px solid #7f3fbf;
-      border-radius: 14px;
-      padding: 20px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      backdrop-filter: blur(8px);
-    }
-
-    .card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px #7f3fbf88;
-    }
-
-    .card h3 {
-      color: #fff;
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      color: #bbb;
-    }
-
-    .tech-stack {
-      text-align: center;
-      font-size: 1.1rem;
-    }
-
-    .tech-icons {
-      margin-top: 20px;
-    }
-
-    .tech-icons img {
-      width: 40px;
-      margin: 0 10px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 60px 20px 30px;
-      color: #777;
-      font-size: 0.9rem;
-    }
-
-    a {
-      color: #7f3fbf;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <title>urcauz | All-Time Caffeinated</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <video id="bg-embed" autoplay muted loop playsinline>
-    <source src="https://cdn.pixabay.com/video/2022/09/18/131735-751029898_large.mp4" type="video/mp4" />
+  <video autoplay loop muted id="bg-video">
+    <source src="https://cdn.pixabay.com/video/2022/09/18/131735-751029898_large.mp4" type="video/mp4">
   </video>
 
   <header>
     <h1>&lt;/urcauz&gt;</h1>
-    <h2 class="tagline">All-time ☕ caffeinated</h2>
-    <div class="typewriter">Crafting full-stack experiences with style, speed, and caffeine.</div>
+    <div class="typewriter" id="typewriter"></div>
   </header>
 
   <section id="projects" class="projects">
-    <div class="card">
-      <h3>🚀 Productivity App</h3>
-      <p>Habit tracker built with Next.js, TypeScript, Firebase & good UI.</p>
-    </div>
-    <div class="card">
-      <h3>🧩 Chrome Extension</h3>
-      <p>Focus-booster tab tool that works offline and local-first.</p>
-    </div>
-    <div class="card">
-      <h3>🎨 UI Components</h3>
-      <p>Stylish reusable TailwindCSS bits for web interfaces.</p>
-    </div>
-    <div class="card">
-      <h3>📄 README Generator</h3>
-      <p>Create glowing GitHub READMEs with preview & deploy export.</p>
-    </div>
+    <div class="card"><h3>Productivity App</h3><p>Next.js + Firebase habit tracker for daily domination.</p></div>
+    <div class="card"><h3>Chrome Extension</h3><p>Quick-tab note app for browser warriors.</p></div>
+    <div class="card"><h3>UI Components</h3><p>Reusable cyber components powered by Tailwind + Vite.</p></div>
+    <div class="card"><h3>README Generator</h3><p>Generate glowing, animated GitHub READMEs.</p></div>
   </section>
 
   <section id="stack" class="tech-stack">
     <h2>💻 Tech Stack</h2>
     <div class="tech-icons">
-      <img src="https://skillicons.dev/icons?i=js,ts,react,nextjs,nodejs,tailwind,html,css,cpp,python" alt="stack"/>
+      <img src="https://skillicons.dev/icons?i=js">
+      <img src="https://skillicons.dev/icons?i=ts">
+      <img src="https://skillicons.dev/icons?i=react">
+      <img src="https://skillicons.dev/icons?i=nextjs">
+      <img src="https://skillicons.dev/icons?i=nodejs">
+      <img src="https://skillicons.dev/icons?i=tailwind">
+      <img src="https://skillicons.dev/icons?i=html">
+      <img src="https://skillicons.dev/icons?i=css">
+      <img src="https://skillicons.dev/icons?i=python">
+      <img src="https://skillicons.dev/icons?i=cpp">
     </div>
   </section>
 
-  <section id="contact" class="tech-stack">
-    <h2>📫 Contact</h2>
-    <p>Let's build something cool — <a href="mailto:urcauzz@gmail.com">urcauzz@gmail.com</a></p>
-    <p>Or hit me up on <a href="https://discord.gg/uujW9psSvt">Discord</a></p>
+  <section id="contact" class="terminal-contact">
+    <p><span class="prompt">&gt; user@urcauz:</span> Let's build something cool.</p>
+    <p><span class="prompt">&gt; contact:</span> <a href="mailto:urcauzz@gmail.com">urcauzz@gmail.com</a></p>
+    <p><span class="prompt">&gt; discord:</span> <a href="https://discord.gg/uujW9psSvt">join chat</a></p>
   </section>
 
   <footer>
-    <p>Made with 💻 & ⚡ by <a href="https://github.com/urcauz">@urcauz</a></p>
+    <p>Made with 💻 + ☕ + ⚡ by <a href="https://github.com/urcauz">@urcauz</a></p>
     <p>🚀 Hosted on <a href="https://urcauz.github.io">GitHub Pages</a></p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
