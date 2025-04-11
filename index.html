@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>urcauz</title>
+  <title>urcauz | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -28,11 +28,13 @@
       color: #7f3fbf;
       text-shadow: 0 0 10px #7f3fbf;
       animation: glow 3s ease-in-out infinite alternate;
+      -webkit-text-stroke: 2px #fff;
     }
     .subtitle {
       font-size: 1.2rem;
       color: #ccc;
       margin-top: 10px;
+      -webkit-text-stroke: 1px #fff;
     }
     @keyframes glow {
       from { text-shadow: 0 0 8px #7f3fbf; }
@@ -126,6 +128,15 @@
     a:hover {
       text-decoration: underline;
     }
+
+    .git-status {
+      font-family: 'Share Tech Mono', monospace;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.75);
+      padding: 10px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
@@ -137,20 +148,24 @@
 
   <section id="projects" class="projects">
     <div class="card">
-      <h3><i class="fas fa-tools"></i> Productivity App</h3>
-      <p>Full-stack habit tracker built with Next.js, TypeScript, and Firebase.</p>
+      <h3><i class="fas fa-comments"></i> Real-time Chat App</h3>
+      <p>Building a real-time chat application using WebSocket and Node.js.</p>
     </div>
     <div class="card">
-      <h3><i class="fas fa-puzzle-piece"></i> Chrome Extension</h3>
-      <p>Browser add-on to boost tab focus and jot down quick notes locally.</p>
+      <h3><i class="fab fa-discord"></i> Discord Clone (Under Development)</h3>
+      <p>A real-time messaging platform, clone of Discord using React and WebSocket.</p>
     </div>
     <div class="card">
-      <h3><i class="fas fa-paint-brush"></i> UI Components</h3>
-      <p>Snappy reusable components powered by TailwindCSS and Vite.</p>
+      <h3><i class="fas fa-check-square"></i> To-Do App</h3>
+      <p>A basic To-Do app with CRUD functionality using React.</p>
     </div>
     <div class="card">
-      <h3><i class="fas fa-code"></i> README Generator</h3>
-      <p>Create cyber-styled README files with live previews and deploy-ready output.</p>
+      <h3><i class="fas fa-sun"></i> Weather App</h3>
+      <p>Get weather forecasts based on your location using the OpenWeatherMap API.</p>
+    </div>
+    <div class="card">
+      <h3><i class="fas fa-shopping-cart"></i> E-commerce Website (Under Dev)</h3>
+      <p>Developing an e-commerce store with React and Firebase.</p>
     </div>
   </section>
 
@@ -165,8 +180,8 @@
       <img src="https://skillicons.dev/icons?i=tailwind" />
       <img src="https://skillicons.dev/icons?i=html" />
       <img src="https://skillicons.dev/icons?i=css" />
-      <img src="https://skillicons.dev/icons?i=cpp" />
       <img src="https://skillicons.dev/icons?i=python" />
+      <img src="https://skillicons.dev/icons?i=git" />
     </div>
   </section>
 
@@ -174,6 +189,12 @@
     <h2>📫 Contact</h2>
     <p>Let’s build something together — <a href="mailto:urcauzz@gmail.com">urcauzz@gmail.com</a></p>
     <p>Or catch me on <a href="https://discord.gg/uujW9psSvt">Discord</a></p>
+  </section>
+
+  <section id="git-status" class="git-status">
+    <h3>Git Status</h3>
+    <p>Last commit: <strong>All systems go! 🚀</strong></p>
+    <p>Status: <span style="color: #7f3fbf;">Up to date</span></p>
   </section>
 
   <footer>
