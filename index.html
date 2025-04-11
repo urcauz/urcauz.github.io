@@ -2,235 +2,220 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>urcauz | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * {
-      margin: 0; padding: 0; box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
     body {
       font-family: 'Share Tech Mono', monospace;
-      background: url('https://i.pinimg.com/originals/70/4c/2e/704c2eb0bdfc6db7362eed6c980fe085.gif') center center / cover no-repeat fixed;
+      background: #0d0d0d;
       color: #fff;
       min-height: 100vh;
       overflow-x: hidden;
       scroll-behavior: smooth;
+      position: relative;
     }
-
+    #bg-embed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      opacity: 0.15;
+      filter: grayscale(0.2);
+      pointer-events: none;
+      background: url('https://i.pinimg.com/originals/70/4c/2e/704c2eb0bdfc6db7362eed6c980fe085.gif') center center / cover no-repeat;
+    }
     header {
       text-align: center;
       padding: 100px 20px 40px;
     }
-
     h1 {
       font-family: 'Orbitron', sans-serif;
       font-size: 3.5rem;
       color: #7f3fbf;
       text-shadow: 0 0 10px #7f3fbf;
       animation: glow 3s ease-in-out infinite alternate;
-      -webkit-text-stroke: 1px #fff;
     }
-
-    .subtitle {
-      font-size: 1.2rem;
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 8px #7f3fbf;
+      }
+      to {
+        text-shadow: 0 0 20px #e600ff;
+      }
+    }
+    .typewriter {
+      font-size: 1.3rem;
       color: #ccc;
       margin-top: 10px;
-      -webkit-text-stroke: 1px #fff;
-    }
-
-    @keyframes glow {
-      from { text-shadow: 0 0 8px #7f3fbf; }
-      to { text-shadow: 0 0 20px #e600ff; }
-    }
-
-    .typewriter {
-      width: fit-content;
-      margin: 20px auto 0;
-      font-size: 1.5rem;
-      white-space: nowrap;
       overflow: hidden;
-      border-right: 2px solid #7f3fbf;
-      animation: typing 5s steps(35, end) 1, blink .75s step-end infinite;
+      white-space: nowrap;
+      border-right: 3px solid #7f3fbf;
+      animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
+      width: 0;
+      margin: auto;
     }
-
     @keyframes typing {
       from { width: 0 }
-      to { width: 100% }
+      to { width: 80vw; }
     }
-
     @keyframes blink {
       50% { border-color: transparent; }
     }
-
     section {
       padding: 80px 20px;
       max-width: 1200px;
       margin: auto;
     }
-
     .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
     }
-
     .card {
-      background: rgba(0,0,0,0.85);
+      background: rgba(0,0,0,0.8);
       border: 1px solid #7f3fbf;
       border-radius: 14px;
       padding: 20px;
-      transition: 0.3s;
-      backdrop-filter: blur(4px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      backdrop-filter: blur(10px);
       cursor: pointer;
     }
-
     .card:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 25px #7f3fbf;
+      box-shadow: 0 0 25px #7f3fbf88;
     }
-
     .card h3 {
       color: #fff;
       margin-bottom: 10px;
     }
-
     .card p {
       color: #bbb;
     }
-
     .tech-stack {
       text-align: center;
+      font-size: 1.1rem;
     }
-
     .tech-icons {
-      margin-top: 30px;
+      margin-top: 20px;
     }
-
     .tech-icons img {
       width: 60px;
-      margin: 12px;
-      transition: transform 0.3s ease;
-      filter: drop-shadow(0 0 5px #7f3fbf);
+      margin: 0 10px;
     }
-
-    .tech-icons img:hover {
-      transform: scale(1.2);
-    }
-
     footer {
       text-align: center;
       padding: 60px 20px 30px;
-      color: #888;
+      color: #777;
       font-size: 0.9rem;
     }
-
     a {
       color: #7f3fbf;
       text-decoration: none;
     }
-
     a:hover {
       text-decoration: underline;
     }
 
     .git-status {
-      font-family: 'Share Tech Mono', monospace;
-      color: #fff;
-      background: rgba(0, 0, 0, 0.75);
-      padding: 10px;
-      border-radius: 8px;
-      margin-top: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #7f3fbf;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      margin: 30px 0;
     }
 
-    .contact-section {
-      background: rgba(0, 0, 0, 0.85);
-      padding: 30px;
-      border-radius: 14px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
-      margin-top: 50px;
-    }
-
-    .contact-section h2 {
-      font-size: 1.8rem;
-      margin-bottom: 15px;
-    }
-
-    .contact-section p {
-      font-size: 1rem;
-      margin-bottom: 10px;
-    }
-
-    .contact-section a {
-      color: #7f3fbf;
-      font-weight: bold;
+    .contact-box {
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      border: 1px solid #7f3fbf;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
     }
 
   </style>
 </head>
 <body>
+  <div id="bg-embed"></div>
+
   <header>
     <h1>&lt;/urcauz&gt;</h1>
-    <div class="subtitle">All-time caffeinated ☕ | Full Stack Developer</div>
-    <div class="typewriter">Crafting clean UIs & caffeinated code, one commit at a time.</div>
+    <div class="typewriter">You're now serving full stack & full style ☕</div>
   </header>
 
   <section id="projects" class="projects">
     <div class="card">
       <h3><i class="fas fa-comments"></i> Real-time Chat App</h3>
-      <p>Building a real-time chat application using WebSocket and Node.js.</p>
+      <p>A full-stack real-time chat application built using Socket.io, Node.js, and React.</p>
     </div>
     <div class="card">
-      <h3><i class="fab fa-discord"></i> Discord Clone (Under Development)</h3>
-      <p>A real-time messaging platform, clone of Discord using React and WebSocket.</p>
+      <h3><i class="fas fa-users"></i> Discord Clone (Under Dev)</h3>
+      <p>A clone of Discord with real-time messaging, channels, and voice chat functionality.</p>
     </div>
     <div class="card">
-      <h3><i class="fas fa-check-square"></i> To-Do App</h3>
-      <p>A basic To-Do app with CRUD functionality using React.</p>
+      <h3><i class="fas fa-code"></i> Weather App</h3>
+      <p>A simple weather application fetching data from an API to display weather details.</p>
     </div>
     <div class="card">
-      <h3><i class="fas fa-sun"></i> Weather App</h3>
-      <p>Get weather forecasts based on your location using the OpenWeatherMap API.</p>
+      <h3><i class="fas fa-paint-brush"></i> Portfolio Website</h3>
+      <p>This interactive portfolio website, built with HTML, CSS, and JavaScript, showcasing projects and skills.</p>
     </div>
     <div class="card">
-      <h3><i class="fas fa-shopping-cart"></i> E-commerce Website (Under Dev)</h3>
-      <p>Developing an e-commerce store with React and Firebase.</p>
+      <h3><i class="fas fa-file"></i> To-Do App</h3>
+      <p>A basic to-do app that allows users to create, edit, and delete tasks with a clean UI.</p>
+    </div>
+    <div class="card">
+      <h3><i class="fas fa-gamepad"></i> Snake Game</h3>
+      <p>A simple Snake game built with HTML5 Canvas and JavaScript for fun and learning.</p>
     </div>
   </section>
 
   <section id="stack" class="tech-stack">
     <h2>💻 Tech Stack</h2>
     <div class="tech-icons">
-      <img src="https://skillicons.dev/icons?i=js" />
-      <img src="https://skillicons.dev/icons?i=ts" />
-      <img src="https://skillicons.dev/icons?i=react" />
-      <img src="https://skillicons.dev/icons?i=nextjs" />
-      <img src="https://skillicons.dev/icons?i=nodejs" />
-      <img src="https://skillicons.dev/icons?i=tailwind" />
-      <img src="https://skillicons.dev/icons?i=html" />
-      <img src="https://skillicons.dev/icons?i=css" />
-      <img src="https://skillicons.dev/icons?i=python" />
-      <img src="https://skillicons.dev/icons?i=git" />
+      <img src="https://skillicons.dev/icons?i=js,ts,react,nextjs,nodejs,tailwind,html,css,cpp,python,git" alt="tech stack" />
+    </div>
+    <div class="tech-icons">
+      <span>JavaScript</span> | <span>TypeScript</span> | <span>React</span> | <span>Next.js</span> | <span>Node.js</span> | <span>TailwindCSS</span> | <span>HTML5</span> | <span>CSS3</span> | <span>Git</span>
     </div>
   </section>
 
-  <section id="contact" class="contact-section">
-    <h2>📫 Contact</h2>
-    <p>Let's build something together — <a href="mailto:urcauzz@gmail.com">urcauzz@gmail.com</a></p>
-    <p>Or catch me on <a href="https://discord.gg/uujW9psSvt">Discord</a></p>
+  <section id="git-status" class="git-status">
+    <h2>📊 GitHub Status</h2>
+    <p>Current GitHub Stats:</p>
+    <!-- GitHub Stats Image -->
+    <img src="https://github-readme-stats.vercel.app/api?username=urcauz&show_icons=true&theme=tokyonight" alt="GitHub Stats" />
+
+    <p>Most Used Languages:</p>
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=urcauz&layout=compact&theme=tokyonight" alt="Most Used Languages" />
+
+    <p>Contribution Streak:</p>
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=urcauz&theme=tokyonight" alt="GitHub Contribution Streak" />
+
+    <p>Profile Views:</p>
+    <img src="https://komarev.com/ghpvc/?username=urcauz&color=blue&style=flat" alt="Profile Views" />
   </section>
 
-  <section id="git-status" class="git-status">
-    <h3>Git Status</h3>
-    <p>Last commit: <strong>All systems go! 🚀</strong></p>
-    <p>Status: <span style="color: #7f3fbf;">Up to date</span></p>
-    <p>Branch: <strong>main</strong></p>
+  <section id="contact" class="contact-box">
+    <h2>📫 Contact</h2>
+    <p>Let's build something cool — <a href="mailto:urcauzz@gmail.com">urcauzz@gmail.com</a></p>
+    <p>Or slide into <a href="https://discord.gg/uujW9psSvt">my Discord</a></p>
   </section>
 
   <footer>
-    <p>Made with ⚡ & ☕ by <a href="https://github.com/urcauz" target="_blank">@urcauz</a></p>
-    <p>🚀 Powered by GitHub Pages</p>
+    <p>Made with 💻 & ⚡ by <a href="https://github.com/urcauz" target="_blank">@urcauz</a></p>
+    <p>🚀 Hosted on <a href="https://urcauz.github.io" target="_blank">GitHub Pages</a></p>
   </footer>
 </body>
 </html>
