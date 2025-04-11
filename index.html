@@ -29,8 +29,9 @@
       height: 100vh;
       z-index: -1;
       opacity: 0.15;
-      filter: blur(3px) grayscale(0.2);
+      filter: blur(4px) grayscale(0.2);
       pointer-events: none;
+      background: url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbnJlNmVsbXNuMnNmM2R3NjgwbHg2NnBreWlhZWQxY3FyOGR3bGJvYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fem4MTbf0LD92IQMv3/giphy.gif') center center / cover no-repeat;
     }
     header {
       text-align: center;
@@ -68,22 +69,6 @@
     }
     @keyframes blink {
       50% { border-color: transparent; }
-    }
-    nav {
-      position: fixed;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 1000;
-    }
-    nav a {
-      margin: 0 15px;
-      color: #aaa;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #fff;
     }
     section {
       padding: 80px 20px;
@@ -142,18 +127,7 @@
   </style>
 </head>
 <body>
-  <div id="bg-embed">
-    <div class="tenor-gif-embed" data-postid="27397660" data-share-method="host" data-aspect-ratio="2.23776" data-width="100%">
-      <a href="https://tenor.com/view/night-city-gif-27397660">Night City GIF</a> from <a href="https://tenor.com/search/night+city-gifs">Night City GIFs</a>
-    </div>
-  </div>
-  <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-
-  <nav>
-    <a href="#projects">Projects</a>
-    <a href="#stack">Stack</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <div id="bg-embed"></div>
 
   <header>
     <h1>&lt;/urcauz&gt;</h1>
