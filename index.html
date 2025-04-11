@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>urcauz | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: #0d0d0d;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    .bg-hero {
+      position: relative;
+      height: 100vh;
+      background: url('https://media.tenor.com/3TrCWXPGFuIAAAAd/night-city.gif') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 1;
+    }
+
+    .intro {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .intro h1 {
+      font-size: 3rem;
+      animation: glow 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #7f3fbf;
+      }
+      to {
+        text-shadow: 0 0 30px #b882ff;
+      }
+    }
+
+    .card {
+      background-color: #1a1a1a;
+      border: none;
+      border-radius: 15px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #7f3fbf55;
+    }
+
+    section {
+      padding: 80px 10%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg-hero">
+    <div class="overlay"></div>
+    <div class="intro">
+      <h1>Hey There, I'm urcauz 👾</h1>
+      <p>Crafting cool stuff with code, one pixel at a time.</p>
+    </div>
+  </div>
+
+  <section id="projects">
+    <h2 class="text-center mb-5">🚀 Projects</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card p-3">
+          <h4>Project One</h4>
+          <p>A cool project using Next.js and Tailwind.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3">
+          <h4>ExtensionX</h4>
+          <p>Browser extension with TypeScript tools built in.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3">
+          <h4>Productivity Pro</h4>
+          <p>Web app focused on boosting dev workflows.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="text-center mb-4">🧠 About Me</h2>
+    <p class="text-center">
+      I’m always building, learning, and creating. I love web tech, fast UIs,
+      and clean aesthetics. If you're down to collaborate or chat, hit me up!
+    </p>
+  </section>
+
+  <section id="contact" class="text-center">
+    <h2>📫 Contact</h2>
+    <p>Find me on <a href="mailto:urcauzz@gmail.com">Gmail</a> or <a href="https://discord.gg/uujW9psSvt" target="_blank">Discord</a></p>
+  </section>
+
+  <footer class="text-center py-4">
+    <p>⚡️ Made by urcauz | Inspired by my GitHub ReadMe</p>
+  </footer>
+
+</body>
+
+</html>
