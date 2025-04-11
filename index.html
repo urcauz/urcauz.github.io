@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>urcauz | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -21,22 +21,23 @@
       scroll-behavior: smooth;
       position: relative;
     }
-    #bg-embed {
+
+    #video-bg {
       position: fixed;
       top: 0;
       left: 0;
       width: 100vw;
       height: 100vh;
-      z-index: -1;
-      opacity: 0.15;
-      filter: blur(4px) grayscale(0.2);
-      pointer-events: none;
-      background: url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbnJlNmVsbXNuMnNmM2R3NjgwbHg2NnBreWlhZWQxY3FyOGR3bGJvYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fem4MTbf0LD92IQMv3/giphy.gif') center center / cover no-repeat;
+      object-fit: cover;
+      z-index: -2;
+      filter: blur(4px) brightness(0.5);
     }
+
     header {
       text-align: center;
       padding: 100px 20px 40px;
     }
+
     h1 {
       font-family: 'Orbitron', sans-serif;
       font-size: 3.5rem;
@@ -44,42 +45,50 @@
       text-shadow: 0 0 10px #7f3fbf;
       animation: glow 3s ease-in-out infinite alternate;
     }
+
     @keyframes glow {
-      from {
-        text-shadow: 0 0 8px #7f3fbf;
-      }
-      to {
-        text-shadow: 0 0 20px #e600ff;
-      }
+      from { text-shadow: 0 0 8px #7f3fbf; }
+      to { text-shadow: 0 0 20px #e600ff; }
     }
-    .typewriter {
+
+    .typewriter-wrapper {
+      text-align: center;
       font-size: 1.3rem;
       color: #ccc;
       margin-top: 10px;
+    }
+
+    .typewriter-text {
+      display: inline-block;
       overflow: hidden;
       white-space: nowrap;
       border-right: 3px solid #7f3fbf;
       animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
-      width: 0;
-      margin: auto;
+      font-family: 'Share Tech Mono', monospace;
+      max-width: 100%;
     }
+
     @keyframes typing {
       from { width: 0 }
-      to { width: 80vw; }
+      to { width: 100% }
     }
+
     @keyframes blink {
       50% { border-color: transparent; }
     }
+
     section {
       padding: 80px 20px;
       max-width: 1200px;
       margin: auto;
     }
+
     .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
     }
+
     .card {
       background: rgba(0,0,0,0.8);
       border: 1px solid #7f3fbf;
@@ -89,49 +98,62 @@
       backdrop-filter: blur(10px);
       cursor: pointer;
     }
+
     .card:hover {
       transform: scale(1.05);
       box-shadow: 0 0 25px #7f3fbf88;
     }
+
     .card h3 {
       color: #fff;
       margin-bottom: 10px;
     }
+
     .card p {
       color: #bbb;
     }
+
     .tech-stack {
       text-align: center;
       font-size: 1.1rem;
     }
+
     .tech-icons {
       margin-top: 20px;
     }
+
     .tech-icons img {
       width: 40px;
       margin: 0 10px;
     }
+
     footer {
       text-align: center;
       padding: 60px 20px 30px;
       color: #777;
       font-size: 0.9rem;
     }
+
     a {
       color: #7f3fbf;
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <div id="bg-embed"></div>
+  <video id="video-bg" autoplay muted loop playsinline>
+    <source src="https://cdn.pixabay.com/video/2022/09/18/131735-751029898_large.mp4" type="video/mp4">
+  </video>
 
   <header>
     <h1>&lt;/urcauz&gt;</h1>
-    <div class="typewriter">You're now serving full stack & full style ☕</div>
+    <div class="typewriter-wrapper">
+      <span class="typewriter-text">You're now serving full stack & full style ☕</span>
+    </div>
   </header>
 
   <section id="projects" class="projects">
