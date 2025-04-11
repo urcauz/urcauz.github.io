@@ -1,128 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>urcauz | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Orbitron', sans-serif;
-      background: #0d0d0d;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Share Tech Mono', monospace;
+      background: url('https://media.tenor.com/1kTBUi34XwwAAAAC/night-city.gif') center center / cover no-repeat fixed;
       color: #fff;
-      overflow-x: hidden;
+      min-height: 100vh;
+      backdrop-filter: blur(4px);
     }
-
-    .bg-hero {
-      position: relative;
-      height: 100vh;
-      background: url('https://media.tenor.com/3TrCWXPGFuIAAAAd/night-city.gif') no-repeat center center/cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      z-index: 1;
-    }
-
-    .intro {
-      position: relative;
-      z-index: 2;
+    header {
       text-align: center;
+      padding: 80px 20px 40px;
     }
-
-    .intro h1 {
+    h1 {
+      font-family: 'Orbitron', sans-serif;
       font-size: 3rem;
-      animation: glow 1.5s ease-in-out infinite alternate;
+      color: #7f3fbf;
+      text-shadow: 0 0 8px #7f3fbf;
     }
-
-    @keyframes glow {
-      from {
-        text-shadow: 0 0 10px #7f3fbf;
-      }
-      to {
-        text-shadow: 0 0 30px #b882ff;
-      }
+    p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      color: #ccc;
     }
-
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
     .card {
-      background-color: #1a1a1a;
-      border: none;
-      border-radius: 15px;
-      transition: 0.3s;
+      background: rgba(0,0,0,0.6);
+      border: 1px solid #7f3fbf;
+      border-radius: 12px;
+      padding: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
     .card:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 20px #7f3fbf55;
+      box-shadow: 0 0 20px #7f3fbf88;
     }
-
-    section {
-      padding: 80px 10%;
+    .card h3 {
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .card p {
+      font-size: 0.95rem;
+      color: #aaa;
+    }
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9rem;
+      color: #888;
+    }
+    a {
+      color: #7f3fbf;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
-
 <body>
-  <div class="bg-hero">
-    <div class="overlay"></div>
-    <div class="intro">
-      <h1>Hey There, I'm urcauz 👾</h1>
-      <p>Crafting cool stuff with code, one pixel at a time.</p>
-    </div>
-  </div>
+  <header>
+    <h1>&lt;/urcauz&gt;</h1>
+    <p>Frontend dev. Design lover. Idea-forger. Constantly caffeinated ☕</p>
+  </header>
 
-  <section id="projects">
-    <h2 class="text-center mb-5">🚀 Projects</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card p-3">
-          <h4>Project One</h4>
-          <p>A cool project using Next.js and Tailwind.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card p-3">
-          <h4>ExtensionX</h4>
-          <p>Browser extension with TypeScript tools built in.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card p-3">
-          <h4>Productivity Pro</h4>
-          <p>Web app focused on boosting dev workflows.</p>
-        </div>
-      </div>
+  <section class="projects">
+    <div class="card">
+      <h3>🔧 Productivity App</h3>
+      <p>A full-stack web app for managing habits & tasks. Built using Next.js, TypeScript & Firebase.</p>
+    </div>
+    <div class="card">
+      <h3>🧩 Chrome Extension</h3>
+      <p>Browser add-on for boosting tab productivity and quick notes with localStorage.</p>
+    </div>
+    <div class="card">
+      <h3>🎨 UI Components</h3>
+      <p>Reusable Tailwind component collection for fast prototyping and responsive layouts.</p>
+    </div>
+    <div class="card">
+      <h3>📁 GitHub Readme Generator</h3>
+      <p>Custom markdown builder with style presets, cyber themes, and deployment ready README files.</p>
     </div>
   </section>
 
-  <section id="about">
-    <h2 class="text-center mb-4">🧠 About Me</h2>
-    <p class="text-center">
-      I’m always building, learning, and creating. I love web tech, fast UIs,
-      and clean aesthetics. If you're down to collaborate or chat, hit me up!
-    </p>
-  </section>
-
-  <section id="contact" class="text-center">
-    <h2>📫 Contact</h2>
-    <p>Find me on <a href="mailto:urcauzz@gmail.com">Gmail</a> or <a href="https://discord.gg/uujW9psSvt" target="_blank">Discord</a></p>
-  </section>
-
-  <footer class="text-center py-4">
-    <p>⚡️ Made by urcauz | Inspired by my GitHub ReadMe</p>
+  <footer>
+    Made with 💻 by <a href="https://github.com/urcauz" target="_blank">@urcauz</a><br>
+    Hosted on <a href="https://urcauz.github.io">GitHub Pages</a>
   </footer>
-
 </body>
-
 </html>
