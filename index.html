@@ -18,24 +18,28 @@
       overflow-x: hidden;
       scroll-behavior: smooth;
     }
+
     header {
       text-align: center;
       padding: 100px 20px 40px;
     }
+
     h1 {
       font-family: 'Orbitron', sans-serif;
       font-size: 3.5rem;
       color: #7f3fbf;
       text-shadow: 0 0 10px #7f3fbf;
       animation: glow 3s ease-in-out infinite alternate;
-      -webkit-text-stroke: 2px #fff;
+      -webkit-text-stroke: 1px #fff;
     }
+
     .subtitle {
       font-size: 1.2rem;
       color: #ccc;
       margin-top: 10px;
       -webkit-text-stroke: 1px #fff;
     }
+
     @keyframes glow {
       from { text-shadow: 0 0 8px #7f3fbf; }
       to { text-shadow: 0 0 20px #e600ff; }
@@ -50,10 +54,12 @@
       border-right: 2px solid #7f3fbf;
       animation: typing 5s steps(35, end) 1, blink .75s step-end infinite;
     }
+
     @keyframes typing {
       from { width: 0 }
       to { width: 100% }
     }
+
     @keyframes blink {
       50% { border-color: transparent; }
     }
@@ -137,6 +143,30 @@
       border-radius: 8px;
       margin-top: 20px;
     }
+
+    .contact-section {
+      background: rgba(0, 0, 0, 0.85);
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+      margin-top: 50px;
+    }
+
+    .contact-section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    .contact-section p {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    .contact-section a {
+      color: #7f3fbf;
+      font-weight: bold;
+    }
+
   </style>
 </head>
 <body>
@@ -185,9 +215,9 @@
     </div>
   </section>
 
-  <section id="contact" class="tech-stack">
+  <section id="contact" class="contact-section">
     <h2>📫 Contact</h2>
-    <p>Let’s build something together — <a href="mailto:urcauzz@gmail.com">urcauzz@gmail.com</a></p>
+    <p>Let's build something together — <a href="mailto:urcauzz@gmail.com">urcauzz@gmail.com</a></p>
     <p>Or catch me on <a href="https://discord.gg/uujW9psSvt">Discord</a></p>
   </section>
 
@@ -195,6 +225,7 @@
     <h3>Git Status</h3>
     <p>Last commit: <strong>All systems go! 🚀</strong></p>
     <p>Status: <span style="color: #7f3fbf;">Up to date</span></p>
+    <p>Branch: <strong>main</strong></p>
   </section>
 
   <footer>
