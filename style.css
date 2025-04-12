@@ -143,9 +143,25 @@ body {
   cursor: pointer;
 }
 
-.close-btn:hover {
-  color: #fff;
+.close-btn {
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #ff4fff;
+  text-shadow: 0 0 8px #ff4fff, 0 0 20px #7f3fbf;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1001;
 }
+
+.close-btn:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px #ffffff, 0 0 25px #ff4fff;
+  transform: scale(1.1);
+}
+
 
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.9); }
