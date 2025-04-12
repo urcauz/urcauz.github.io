@@ -9,10 +9,10 @@ body {
   background: #0d0d0d;
   color: #fff;
   min-height: 100vh;
-  overflow-x: hide; /* Prevent horizontal scroll */
+  overflow-x: hidden; /* Prevent horizontal scroll */
   scroll-behavior: smooth;
   position: relative;
-  padding: 0 15pxpxpx; /* Keeps things inside */
+  padding: 0 15px; /* Keeps things inside */
 }
 
 .git-status {
