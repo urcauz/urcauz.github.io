@@ -7,42 +7,31 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
-
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Share Tech Mono', monospace;
       background: #0d0d0d;
       color: #fff;
       overflow-x: hidden;
-      overflow-y:auto;
+      overflow-y: auto;
       position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
-
     #bg-embed {
       position: fixed;
-      top: 0;
-      left: 0;
-      width:100vw;
-      height: 100vh;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
       z-index: -1;
       filter: grayscale(1);
       background: url('https://i.gifer.com/4Cb2.gif') center center / cover no-repeat;
     }
-
     header {
       text-align: center;
       padding: 30px 20px 10px;
     }
-
     h1 {
       font-family: 'Orbitron', sans-serif;
       font-size: 3rem;
@@ -50,39 +39,26 @@
       text-shadow: 0 0 10px #7b18de;
       animation: glow 3s ease-in-out infinite alternate;
     }
-
     @keyframes glow {
       from { text-shadow: 0 0 8px #7f3fbf; }
       to { text-shadow: 0 0 20px #e600ff; }
     }
-
-   .typewriter {
-  font-size: 1.5rem;
-  color: #a66ce0;
-  margin-top: 10px;
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 3px solid #7f3fbf;
-  animation: typing 5s steps(50, end) 1s forwards, blink 1s step-end infinite; 
-  width: 0;
-  margin: auto;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
-}
-
+    .typewriter {
+      font-size: 1.5rem;
+      color: #a66ce0;
+      margin-top: 10px;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 3px solid #7f3fbf;
+      animation: typing 5s steps(50, end) 1s forwards, blink 1s step-end infinite;
+      width: 0;
+      margin: auto;
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    @keyframes blink { 50% { border-color: transparent; } }
     .projects {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -90,9 +66,7 @@
       padding: 30px 0;
       max-width: 1100px;
       margin: auto;
-      
     }
-
     .card {
       background: rgba(0,0,0,0.8);
       border: 1px solid #7b18de;
@@ -102,123 +76,75 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       backdrop-filter: blur(2px);
     }
-
     .card:hover {
       transform: scale(1.03);
       box-shadow: 0 0 20px #7f3fbf99;
-      
     }
-
-    .card h3 {
-      color: #fff;
-      font-size: 1rem;
-      margin-bottom: 8px;
-    }
-
-    .card p {
-      color: #bbb;
-      font-size: 0.8rem;
-    }
-
-    .tech-stack {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    .tech-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 30px;
-    }
-
-    .tech-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100px;
-    }
-
-    .tech-item img {
-      width: 60px;
-      height: 60px;
-      margin-bottom: 8px;
-    }
-
-    .tech-item span {
-      font-size: 0.95rem;
-      color: #ccc;
-    }
-
+    .card h3 { color: #fff; font-size: 1rem; margin-bottom: 8px; }
+    .card p { color: #bbb; font-size: 0.8rem; }
     .git-status {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
       background: rgba(0, 0, 0, 0.7);
-      padding: 20px;
-      border-radius: 10px;
+      padding: 30px;
+      border-radius: 12px;
       border: 1px solid #7f3fbf;
-     
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-      margin-top: 20px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.1);
+      margin-top: 40px;
+      max-width: 1000px;
       text-align: center;
     }
-
-    .git-status img {
-      margin: 10px auto;
-      display: block;
-      max-width: 100%;
-    }
-
-    .contact-box {
-      text-align: center;
-      margin: 20px auto;
-      padding: 10px;
-      color: #ccc;
-      font-size: 0.95rem;
-    }
-
-    footer {
-      text-align: center;
+    .git-status .stat {
+      background: #111;
+      border-radius: 10px;
       padding: 15px;
-      color: #777;
-      font-size: 0.9rem;
     }
-
-    a {
-      color: #7f3fbf;
-      text-decoration: none;
+    .git-status .full-width {
+      grid-column: 1 / -1;
     }
-
-    a:hover {
-      text-decoration: underline;
+    .git-status img {
+      width: 100%;
+      height: auto;
     }
-
+    .contact-box {
+      background: rgba(0,0,0,0.7);
+      padding: 20px;
+      margin: 40px auto 20px;
+      border-radius: 12px;
+      border: 1px solid #7f3fbf;
+      max-width: 800px;
+      text-align: center;
+    }
+    .footer-box {
+      background: rgba(0,0,0,0.7);
+      padding: 20px;
+      margin: 0 auto 40px;
+      border-radius: 12px;
+      border: 1px solid #7f3fbf;
+      max-width: 800px;
+      text-align: center;
+    }
+    footer { text-align: center; padding: 10px; color: #777; font-size: 0.9rem; }
+    a { color: #7f3fbf; text-decoration: none; }
+    a:hover { text-decoration: underline; }
     .footer-line {
       color: #7f3fbf;
       font-size: 1.1rem;
       text-shadow: 0 0 8px #7f3fbf;
     }
-
-    .small {
-      font-size: 0.75rem;
-      opacity: 0.7;
-    }
-
     @media (max-width: 1024px) {
-      .projects {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .projects { grid-template-columns: repeat(2, 1fr); }
+      .git-status { grid-template-columns: 1fr; }
     }
-
   </style>
 </head>
 <body>
   <div id="bg-embed"></div>
-
   <header>
     <h1>&lt;/urcauz&gt;</h1>
     <div class="typewriter">Full Stack Dev | All-Time Caffeined ☕</div>
   </header>
-
   <section class="projects">
     <div class="card"><h3><i class="fa fa-comments"></i> Chat App</h3><p>Full-stack real-time messaging app.</p></div>
     <div class="card"><h3><i class="fa fa-users"></i> Discord Clone</h3><p>Realtime voice + chat clone.</p></div>
@@ -229,149 +155,36 @@
     <div class="card"><h3><i class="fa fa-database"></i> API Server</h3><p>RESTful Node.js API with MongoDB.</p></div>
     <div class="card"><h3><i class="fa fa-image"></i> Image Gallery</h3><p>Responsive dynamic gallery grid.</p></div>
   </section>
-<div id="projectModal" class="modal">
-  <div class="modal-content">
-    <span class="close-btn">&times;</span>
-    <div class="modal-header">
-      <div id="modalIcon" class="modal-icon"></div>
-      <h2 id="modalTitle"></h2>
-    </div>
-    <p id="modalDescription"></p>
-  </div>
-</div>
-  <section class="tech-stack">
-    <h2>💻 Tech Stack</h2>
-    <div class="tech-grid">
-<div class="tech-grid">
-  <div class="tech-item" onclick="showTechDetails('JavaScript')">
-    <img src="https://skillicons.dev/icons?i=js" alt="JavaScript"/>
-    <span>JavaScript</span>
-  </div>
-  <div class="tech-item" onclick="showTechDetails('TypeScript')">
-    <img src="https://skillicons.dev/icons?i=ts" alt="TypeScript"/>
-    <span>TypeScript</span>
-  </div>
-  <div class="tech-item" onclick="showTechDetails('React')">
-    <img src="https://skillicons.dev/icons?i=react" alt="React"/>
-    <span>React</span>
-  </div>
-  <div class="tech-item" onclick="showTechDetails('Next.js')">
-    <img src="https://skillicons.dev/icons?i=nextjs" alt="Next.js"/>
-    <span>Next.js</span>
-  </div>
-  <div class="tech-item" onclick="showTechDetails('Node.js')">
-    <img src="https://skillicons.dev/icons?i=nodejs" alt="Node.js"/>
-    <span>Node.js</span>
-  </div>
-  <div class="tech-item" onclick="showTechDetails('Tailwind')">
-    <img src="https://skillicons.dev/icons?i=tailwind" alt="Tailwind"/>
-    <span>Tailwind</span>
-  </div>
-  <div class="tech-item" onclick="showTechDetails('HTML5')">
-    <img src="https://skillicons.dev/icons?i=html" alt="HTML"/>
-    <span>HTML5</span>
-  </div>
-  <div class="tech-item" onclick="showTechDetails('CSS3')">
-    <img src="https://skillicons.dev/icons?i=css" alt="CSS"/>
-    <span>CSS3</span>
-  </div>
-  <div class="tech-item" onclick="showTechDetails('C++')">
-    <img src="https://skillicons.dev/icons?i=cpp" alt="C++"/>
-    <span>C++</span>
-  </div>
-  <div class="tech-item" onclick="showTechDetails('Python')">
-    <img src="https://skillicons.dev/icons?i=python" alt="Python"/>
-    <span>Python</span>
-  </div>
-  <div class="tech-item" onclick="showTechDetails('Git')">
-    <img src="https://skillicons.dev/icons?i=git" alt="Git"/>
-    <span>Git</span>
-  </div>
-</div>
 
+  <section class="git-status">
+    <div class="stat">
+      <h3>Current GitHub Stats:</h3>
+      <img src="https://github-readme-stats.vercel.app/api?username=urcauz&show_icons=true&theme=tokyonight" alt="GitHub Stats" />
+    </div>
+    <div class="stat">
+      <h3>Most Used Languages:</h3>
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=urcauz&layout=compact&theme=tokyonight" alt="Most Used Languages" />
+    </div>
+    <div class="stat full-width">
+      <h3>Contribution Streak:</h3>
+      <img src="https://github-readme-streak-stats.herokuapp.com/?user=urcauz&theme=tokyonight" alt="GitHub Contribution Streak" />
+    </div>
+    <div class="stat full-width">
+      <h3>Profile Views:</h3>
+      <img src="https://komarev.com/ghpvc/?username=urcauz&color=blue&style=flat" alt="Profile Views" />
+    </div>
   </section>
 
-<section id="git-status" class="git-status">
-  <h2>📊 GitHub Status</h2>
-
-  <div class="stat current">
-    <h3>Current Stats</h3>
-    <img src="https://github-readme-stats.vercel.app/api?username=urcauz&show_icons=true&theme=tokyonight" alt="GitHub Stats" />
+  <div class="contact-box">
+    <h2>📫 Contact</h2>
+    <p>Drop an email: <a href="mailto:urcauzz@gmail.com">urcauzz@gmail.com</a></p>
+    <p>Connect with Discord: <a href="https://discord.gg/twB3vrbB">Server Of Mine (Add me from there)</a></p>
   </div>
 
-  <div class="stat top-langs">
-    <h3>Top Languages</h3>
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=urcauz&layout=compact&theme=tokyonight" alt="Most Used Languages" />
+  <div class="footer-box">
+    <p class="footer-line">Thanks For Reading all the way! You get a cookie 🍪</p>
   </div>
 
-  <div class="stat streak">
-    <h3>Streak</h3>
-    <img src="https://github-readme-streak-stats.herokuapp.com/?user=urcauz&theme=tokyonight" alt="Contribution Streak" />
-  </div>
-
-  <div class="stat views">
-    <h3>Profile Views</h3>
-    <img src="https://komarev.com/ghpvc/?username=urcauz&color=blue&style=flat" alt="Profile Views" />
-  </div>
-</section>
-
-
-<div id="techInfo" class="tech-info">
- 
-</div>
-
- 
-
-<section class="contact-box">
-  <h2>📫 Contact</h2>
-  <p>Drop an email: <a href="mailto:urcauzz@gmail.com">urcauzz@gmail.com</a></p>
-  <p>Connect with Discord: <a href="https://discord.gg/twB3vrbB">Server Of Mine (Add me from there)</a></p>
-</section>
-
-<footer class="footer-box">
-  <p>Thanks for reading all the way! You get a cookie 🍪</p>
-</footer>
-
-
-
- <script>
-    const modal = document.getElementById("projectModal");
-    const modalTitle = document.getElementById("modalTitle");
-    const modalDescription = document.getElementById("modalDescription");
-    const closeBtn = document.querySelector(".close-btn");
-
-    const projectDetails = [
-      { title: "Chat App", desc: "Full-stack real-time messaging app with socket.io and React." },
-      { title: "Discord Clone", desc: "Voice and text chat app using WebRTC and Firebase." },
-      { title: "Weather App", desc: "Fetches real-time weather from OpenWeatherMap API." },
-      { title: "Portfolio", desc: "This site – built from scratch with custom animations and layout." },
-      { title: "To-Do App", desc: "Productivity tool to organize your day with sleek UI." },
-      { title: "Snake Game", desc: "Classic snake game built using HTML Canvas." },
-      { title: "API Server", desc: "RESTful API built with Node.js and MongoDB." },
-      { title: "Image Gallery", desc: "Responsive dynamic grid gallery with modal previews." }
-    ];
-
-    const cards = document.querySelectorAll(".card");
-    cards.forEach((card, index) => {
-      card.addEventListener("click", () => {
-        modalTitle.textContent = projectDetails[index].title;
-        modalDescription.textContent = projectDetails[index].desc;
-        modal.style.display = "block";
-      });
-    });
-
-    closeBtn.onclick = () => {
-      modal.style.display = "none";
-    };
-
-    window.onclick = event => {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    };
-  </script>
+  <footer></footer>
 </body>
 </html>
-
-
-
