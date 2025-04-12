@@ -1,10 +1,12 @@
 <script>
+  // Selecting the modal and its components
   const modal = document.getElementById("projectModal");
   const modalTitle = document.getElementById("modalTitle");
   const modalDescription = document.getElementById("modalDescription");
   const modalIcon = document.getElementById("modalIcon");
   const closeBtn = document.querySelector(".close-btn");
 
+  // Array of project details
   const projectDetails = [
     {
       title: "Chat App",
@@ -48,22 +50,26 @@
     }
   ];
 
+  // Querying all project cards
   const cards = document.querySelectorAll(".card");
   cards.forEach((card, index) => {
     card.addEventListener("click", () => {
+      // Show the details of the selected project in the modal
       modalTitle.textContent = projectDetails[index].title;
       modalDescription.textContent = projectDetails[index].desc;
       modalIcon.textContent = projectDetails[index].icon;
-      modal.style.display = "block";
+      modal.style.display = "block"; // Display the modal
     });
   });
 
-  closeBtn.onclick = () => {
+  // Close modal when the "close-btn" button is clicked
+  closeBtn.onclick = function () {
     modal.style.display = "none";
   };
 
-  window.onclick = event => {
-    if (event.target == modal) {
+  // Close modal when clicked outside of it
+  window.onclick = function (event) {
+    if (event.target === modal) {
       modal.style.display = "none";
     }
   };

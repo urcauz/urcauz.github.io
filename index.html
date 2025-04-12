@@ -17,7 +17,7 @@
       font-family: 'Share Tech Mono', monospace;
       background: #0d0d0d;
       color: #fff;
-      overflow:;
+      overflow: hidden;
       position: relative;
       display: flex;
       flex-direction: column;
@@ -44,7 +44,7 @@
       font-family: 'Orbitron', sans-serif;
       font-size: 3rem;
       color: #7b18de;
-      text-shadow: 0 0 10px ##7b18de;
+      text-shadow: 0 0 10px #7b18de;
       animation: glow 3s ease-in-out infinite alternate;
     }
 
@@ -230,7 +230,7 @@
   <div class="modal-content">
     <span class="close-btn">&times;</span>
     <div class="modal-header">
-      <div id="modalIcon" class="modal-icon">↖️Close | Click the projects to find out more!</div>
+      <div id="modalIcon" class="modal-icon">↖ Close | Click the projects to find out more!</div>
       <h2 id="modalTitle"></h2>
     </div>
     <p id="modalDescription"></p>
@@ -313,8 +313,12 @@
     <h3>Profile Views:</h3>
     <img src="https://komarev.com/ghpvc/?username=urcauz&color=blue&style=flat" alt="Profile Views" />
   </div>
+  
 </section>
 
+<div id="techInfo" class="tech-info">
+  <!-- Information about the clicked tech will be displayed here -->
+</div>
 
  
 
@@ -379,40 +383,5 @@
 </body>
 </html>
 
-<script>
-  const modal = document.getElementById("projectModal");
-  const modalTitle = document.getElementById("modalTitle");
-  const modalDescription = document.getElementById("modalDescription");
-  const closeBtn = document.querySelector(".close-btn");
-
-  const projectDetails = [
-    { title: "Chat App", desc: "Full-stack real-time messaging app with socket.io and React." },
-    { title: "Discord Clone", desc: "Voice and text chat app using WebRTC and Firebase." },
-    { title: "Weather App", desc: "Fetches real-time weather from OpenWeatherMap API." },
-    { title: "Portfolio", desc: "This site – built from scratch with custom animations and layout." },
-    { title: "To-Do App", desc: "Productivity tool to organize your day with sleek UI." },
-    { title: "Snake Game", desc: "Classic snake game built using HTML Canvas." },
-    { title: "API Server", desc: "RESTful API built with Node.js and MongoDB." },
-    { title: "Image Gallery", desc: "Responsive dynamic grid gallery with modal previews." },
-  ];
-
-  const cards = document.querySelectorAll(".card");
-  cards.forEach((card, index) => {
-    card.addEventListener("click", () => {
-      modalTitle.textContent = projectDetails[index].title;
-      modalDescription.textContent = projectDetails[index].desc;
-      modal.style.display = "block";
-    });
-  });
-
-  closeBtn.onclick = () => {
-    modal.style.display = "none";
-  };
-
-  window.onclick = event => {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  };
-</script>
+<!-- Removed duplicate script block -->
 
