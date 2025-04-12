@@ -9,18 +9,19 @@ body {
   background: #0d0d0d;
   color: #fff;
   min-height: 100vh;
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-x: hidden;
+  overflow-y: auto;
   scroll-behavior: smooth;
   position: relative;
-  padding: 0 15px; /* Keeps things inside */
+  padding: 0 15px; 
 }
 
 .git-status {
   width: 75%;
-  max-width: 1200px; /* Keeps the content within a limit */
+  max-width: 1200px; 
   margin: 80px auto;
   padding: 40px;
-  background: rgba(0, 0, 0, 0.8); /* Clean background */
+  background: rgba(0, 0, 0, 0.8);
   border: 2px solid #7f3fbf;
   border-radius: 15px;
   box-shadow: 0 0 30px rgba(127, 63, 191, 0.4);
@@ -29,7 +30,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
-  overflow: hidden; /* Ensures no overflow */
+  overflow: hidden;
 }
 
 .git-status h2 {
@@ -40,8 +41,8 @@ body {
 }
 
 .git-status .stat {
-  width: 100%; /* Allows for proper width without overflow */
-  min-width: 250px; /* Ensures it fits in smaller screens */
+  width: 100%;
+  min-width: 250px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -72,7 +73,7 @@ body {
   }
 
   .git-status .stat {
-    width: 45%; /* Adjust width for medium screens */
+    width: 45%;
   }
 }
 
@@ -84,7 +85,7 @@ body {
   }
 
   .git-status .stat {
-    width: 80%; /* Stacks items in a single column */
+    width: 80%;
     margin-bottom: 20px;
   }
 }
@@ -155,7 +156,7 @@ body {
   font-size: 36px;
   filter: drop-shadow(0 0 5px #fff);
 }
-/* Styling for the tech icons */
+
 .tech-grid {
   display: flex;
   flex-wrap: wrap;
@@ -186,7 +187,7 @@ body {
   font-size: 14px;
 }
 
-/* Styling for the tech details display */
+
 .tech-info {
   margin-top: 30px;
   text-align: center;
