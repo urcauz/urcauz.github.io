@@ -1,5 +1,3 @@
-css
-Copy code
 * {
   margin: 0;
   padding: 0;
@@ -7,92 +5,97 @@ Copy code
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #2a0a5d, #5d2b7e);
+  font-family: 'Share Tech Mono', monospace;
+  background: #0d0d0d;
   color: #fff;
-  overflow-x: hidden;
+  min-height: 100vh;
+  overflow-x: hidd; /* Prevent horizontal scroll */
+  scroll-behavior: smooth;
+  position: relative;
+  padding: 0 15pxpxpx; /* Keeps things inside */
 }
 
-header {
-  position: relative;
-  height: 100vh;
-  background: url('https://media.tenor.com/jE7XZ1Uqjq4AAAAd/night-city.gif') center/cover no-repeat;
+.git-status {
+  width: 75%;
+  max-width: 1200px; /* Keeps the content within a limit */
+  margin: 80px auto;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.8); /* Clean background */
+  border: 2px solid #7f3fbf;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(127, 63, 191, 0.4);
+  text-align: center;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  overflow: hidden; /* Ensures no overflow */
+}
+
+.git-status h2 {
+  width: 100%;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.git-status .stat {
+  width: 100%; /* Allows for proper width without overflow */
+  min-width: 250px; /* Ensures it fits in smaller screens */
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  padding: 20px;
+  margin: 10px 0;
 }
 
-header h1 {
-  font-size: 3rem;
-  text-shadow: 0 0 20px #000;
-  margin-top: 1rem;
-  animation: fadeIn 3s ease;
+.git-status img {
+  width: 100%;
+  max-width: 350px;
+  margin: 20px auto;
 }
 
-.section {
-  padding: 60px 20px;
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+.git-status .views img {
+  margin-top: 30px;
+  width: 120px;
+  opacity: 0.7;
 }
 
-.section.visible {
-  opacity: 1;
-  transform: translateY(0);
+.git-status .stat p {
+  color: #ccc;
+  margin-top: 10px;
 }
 
-.section ul {
-  list-style: none;
-  margin-top: 20px;
-}
-
-.socials a {
-  display: inline-block;
-  margin: 10px;
-  padding: 10px 20px;
-  border-radius: 30px;
-  background-color: #7F3FBF;
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s, transform 0.3s;
-}
-
-.socials a:hover {
-  background: #9c60e0;
-  transform: scale(1.1);
-}
-
-.tech-icons img {
-  width: 50px;
-  margin: 10px;
-  transition: transform 0.3s;
-}
-
-.tech-icons img:hover {
-  transform: scale(1.2);
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  color: #bbb;
-  font-size: 0.9rem;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
+@media (max-width: 1200px) {
+  .git-status {
+    padding: 30px;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .git-status .stat {
+    width: 45%; /* Adjust width for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .git-status {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .git-status .stat {
+    width: 80%; /* Stacks items in a single column */
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .git-status {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .git-status .stat {
+    width: 100%;
   }
 }
