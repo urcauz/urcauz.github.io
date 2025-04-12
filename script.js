@@ -8,48 +8,10 @@
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
-  <div class="projects">
-    <div class="card">
-      <h3><i class="fa fa-comments"></i> Chat App</h3>
-      <p>Full-stack real-time messaging app.</p>
-    </div>
-    <div class="card">
-      <h3><i class="fa fa-users"></i> Discord Clone</h3>
-      <p>Realtime voice + chat clone.</p>
-    </div>
-    <div class="card">
-      <h3><i class="fa fa-cloud-sun"></i> Weather App</h3>
-      <p>Weather info from live APIs.</p>
-    </div>
-    <div class="card">
-      <h3><i class="fa fa-laptop-code"></i> Portfolio</h3>
-      <p>This very portfolio site, built from scratch.</p>
-    </div>
-    <div class="card">
-      <h3><i class="fa fa-tasks"></i> To-Do App</h3>
-      <p>Manage tasks in style.</p>
-    </div>
-    <div class="card">
-      <h3><i class="fa fa-gamepad"></i> Snake Game</h3>
-      <p>Classic game built with Canvas.</p>
-    </div>
-    <div class="card">
-      <h3><i class="fa fa-database"></i> API Server</h3>
-      <p>RESTful Node.js API with MongoDB.</p>
-    </div>
-    <div class="card">
-      <h3><i class="fa fa-image"></i> Image Gallery</h3>
-      <p>Responsive dynamic gallery grid.</p>
-    </div>
+  
   </div>
 
-  <!-- Modal -->
-  <div id="projectModal" class="modal">
-    <div class="modal-content">
-      <span class="close-btn">&times;</span>
-      <h2 id="modalTitle"></h2>
-      <p id="modalDescription"></p>
-      <p id="modalIcon"></p>
+
     </div>
   </div>
 
