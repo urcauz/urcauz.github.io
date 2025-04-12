@@ -285,6 +285,13 @@
     <p>Drop an email: <a href="mailto:urcauzz@gmail.com">urcauzz@gmail.com</a></p>
     <br><p>Connect with Discord: <a href="https://discord.gg/twB3vrbB">Server Of Mine(Add me from there)</a></p></br>
   </section>
+  <div id="projectModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2 id="modalTitle"></h2>
+    <p id="modalDescription"></p>
+  </div>
+</div>
 
   <footer>
     <p class="footer-line">Thanks For Reading all the way ! You get a cookie 🍪 </p>
@@ -328,4 +335,40 @@
 </body>
 </html>
 
+<script>
+  const modal = document.getElementById("projectModal");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalDescription = document.getElementById("modalDescription");
+  const closeBtn = document.querySelector(".close-btn");
+
+  const projectDetails = [
+    { title: "Chat App", desc: "Full-stack real-time messaging app with socket.io and React." },
+    { title: "Discord Clone", desc: "Voice and text chat app using WebRTC and Firebase." },
+    { title: "Weather App", desc: "Fetches real-time weather from OpenWeatherMap API." },
+    { title: "Portfolio", desc: "This site – built from scratch with custom animations and layout." },
+    { title: "To-Do App", desc: "Productivity tool to organize your day with sleek UI." },
+    { title: "Snake Game", desc: "Classic snake game built using HTML Canvas." },
+    { title: "API Server", desc: "RESTful API built with Node.js and MongoDB." },
+    { title: "Image Gallery", desc: "Responsive dynamic grid gallery with modal previews." },
+  ];
+
+  const cards = document.querySelectorAll(".card");
+  cards.forEach((card, index) => {
+    card.addEventListener("click", () => {
+      modalTitle.textContent = projectDetails[index].title;
+      modalDescription.textContent = projectDetails[index].desc;
+      modal.style.display = "block";
+    });
+  });
+
+  closeBtn.onclick = () => {
+    modal.style.display = "none";
+  };
+
+  window.onclick = event => {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+</script>
 
