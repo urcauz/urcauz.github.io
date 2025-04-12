@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="style.css">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      scroll-behavior: smooth;
+    }
     body {
       font-family: 'Share Tech Mono', monospace;
       background: #0d0d0d;
@@ -30,7 +33,7 @@
     }
     header {
       text-align: center;
-      padding: 50px 20px 10px;
+      padding: 30px 20px 10px;
     }
     h1 {
       font-family: 'Orbitron', sans-serif;
@@ -63,8 +66,8 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 15px;
-      padding: 80px 0;
-      max-width: 1000px;
+      padding: 30px 0;
+      max-width: 1100px;
       margin: auto;
     }
     .card {
@@ -91,8 +94,8 @@
       border-radius: 12px;
       border: 1px solid #7f3fbf;
       box-shadow: 0 0 10px rgba(255,255,255,0.1);
-      margin-top: 90px;
-      max-width: 1000px;
+      margin-top: 40px;
+      max-width: 1100px;
       text-align: center;
     }
     .git-status::before {
@@ -101,7 +104,7 @@
       color: #7f3fbf;
       text-shadow: 0 0 6px #7f3fbf;
       grid-column: 1 / -1;
-      margin-bottom: 25px;
+      margin-bottom: 10px;
     }
     .git-status .stat {
       background: #111;
