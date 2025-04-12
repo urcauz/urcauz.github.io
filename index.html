@@ -87,13 +87,21 @@
       grid-template-columns: 1fr 1fr;
       gap: 20px;
       background: rgba(0, 0, 0, 0.7);
-      padding: 30px;
+      padding: 40px;
       border-radius: 12px;
       border: 1px solid #7f3fbf;
       box-shadow: 0 0 10px rgba(255,255,255,0.1);
       margin-top: 40px;
-      max-width: 1000px;
+      max-width: 1100px;
       text-align: center;
+    }
+    .git-status::before {
+      content: "GitHub Status";
+      font-size: 1.4rem;
+      color: #7f3fbf;
+      text-shadow: 0 0 6px #7f3fbf;
+      grid-column: 1 / -1;
+      margin-bottom: 10px;
     }
     .git-status .stat {
       background: #111;
