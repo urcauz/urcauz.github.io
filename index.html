@@ -53,26 +53,32 @@
       to { text-shadow: 0 0 20px #e600ff; }
     }
 
-    .typewriter {
-      font-size: 1.2rem;
-      color: ##a66ce0;
-      margin-top: 10px;
-      overflow: hidden;
-      white-space: nowrap;
-      border-right: 3px solid #7f3fbf;
-      animation: typing 4s steps(15, end) 1s forwards, blink 0.75s step-end infinite;
-      width: 0;
-      margin: auto;
-    }
+   .typewriter {
+  font-size: 1.5rem; /* Adjusted for better visibility */
+  color: #a66ce0; /* Corrected color */
+  margin-top: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #7f3fbf;
+  animation: typing 5s steps(50, end) 1s forwards, blink 1s step-end infinite; /* Smoother typing & longer blink */
+  width: 0;
+  margin: auto;
+}
 
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 80vw; }
-    }
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
 
-    @keyframes blink {
-      50% { border-color: transparent; }
-    }
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
 
     .projects {
       display: grid;
@@ -281,7 +287,7 @@
   </section>
 
   <footer>
-    <p class="footer-line">☕ all-time caffeinated</p>
+    <p class="footer-line">Thanks For Reading all the way ! You get a cookie 🍪 </p>
   </footer>
 </body>
 </html>
