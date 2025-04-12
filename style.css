@@ -9,8 +9,7 @@ body {
   background: #0d0d0d;
   color: #fff;
   min-height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden;
   scroll-behavior: smooth;
   position: relative;
   padding: 0 15px; 
