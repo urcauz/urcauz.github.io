@@ -17,7 +17,11 @@ body {
 
 #git-status {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "current top"
+    "streak  streak"
+    "views   views";
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
   max-width: 800px;
   margin: 60px auto;
@@ -36,37 +40,40 @@ body {
   color: #fff;
 }
 
+#git-status .stat {
+  padding: 10px;
+}
+
 #git-status .stat h3 {
   font-size: 1.1rem;
   margin-bottom: 8px;
   color: #ddd;
 }
 
+/* assign grid areas */
+#git-status .current   { grid-area: current; }
+#git-status .top-langs  { grid-area: top; }
+#git-status .streak     { grid-area: streak; transform: scale(1.05); }
+#git-status .views      { grid-area: views; }
+
+/* images sizing */
 #git-status .stat img {
   width: 100%;
   max-width: 160px;
   height: auto;
+  margin: 0 auto;
   border-radius: 6px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  margin: 0 auto;
 }
 
-#git-status .stat.views img {
+#git-status .views img {
   max-width: 120px;
 }
 
-#git-status .stat.streak {
-  /* make the streak card pop */
-  transform: scale(1.05);
-}
-
-#git-status .stat.streak h3 {
-  font-size: 1.2rem;
-}
-
-#git-status .stat.streak img {
+#git-status .streak img {
   max-width: 180px;
 }
+
 
 @media (max-width: 1200px) {
   .git-status {
@@ -246,8 +253,7 @@ body {
   font-size: 0.9rem;
   color: #ccc;
 }
-/* CONTACT BOX */
-.contact-box {
+.contact-box, .footer-box {
   width: 75%;
   max-width: 800px;
   margin: 40px auto;
@@ -257,6 +263,7 @@ body {
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(127, 63, 191, 0.4);
   text-align: center;
+  color: #ccc;
 }
 
 .contact-box h2 {
@@ -265,27 +272,17 @@ body {
   color: #fff;
 }
 
-.contact-box p {
+.contact-box p, .footer-box p {
   margin: 10px 0;
-  color: #ccc;
 }
 
-/* FOOTER BOX */
-footer {
-  width: 75%;
-  max-width: 800px;
-  margin: 20px auto 40px;
-  padding: 15px;
-  background: rgba(0, 0, 0, 0.8);
-  border: 2px solid #7f3fbf;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(127, 63, 191, 0.4);
-  text-align: center;
+.footer-box {
+  margin-top: 20px;
 }
 
-.footer-line {
-  margin: 0;
+.footer-box p {
   color: #fff;
   font-size: 1rem;
 }
+
 
