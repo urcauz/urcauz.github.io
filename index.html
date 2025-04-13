@@ -4,120 +4,138 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>urcauz | Portfolio</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
     body {
-      background-color: #0f0f1b;
-      color: white;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      font-family: 'Share Tech Mono', monospace;
+      background: #0d0d0d;
+      color: #fff;
       overflow-x: hidden;
     }
-    .banner img {
-      width: 100%;
-      border-radius: 20px;
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: url('https://media.tenor.com/jE7XZ1Uqjq4AAAAd/night-city.gif') no-repeat center center/cover;
+      box-shadow: inset 0 0 100px #7f3fbf;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin: 0;
+      color: #fff;
+      text-shadow: 0 0 10px #7f3fbf;
+    }
+
+    .typewriter {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      color: #aaa;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    h2 {
+      border-bottom: 2px solid #7f3fbf;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: #1a1a1a;
+      padding: 1rem;
+      border-radius: 10px;
+      border: 1px solid #333;
+      box-shadow: 0 0 10px rgba(127, 63, 191, 0.4);
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
       box-shadow: 0 0 20px #7f3fbf;
     }
-    .section-title {
-      font-size: 2rem;
-      color: #7f3fbf;
-      margin-top: 2rem;
+
+    .footer {
       text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #888;
     }
-    .stats-img, .langs-img, .trophies-img, .quote-img, .contrib-img {
-      width: 100%;
-      max-width: 400px;
-      margin: 10px;
+
+    a {
+      color: #7f3fbf;
+      text-decoration: none;
     }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
     .socials img {
       margin: 10px;
-    }
-    .stack-icons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      color: #aaa;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="banner text-center my-3">
-      <img src="https://media.tenor.com/jE7XZ1Uqjq4AAAAd/night-city.gif" alt="Banner" />
-    </div>
 
-    <div class="text-center">
-      <img src="https://capsule-render.vercel.app/api?type=waving&color=7F3FBF&height=200&section=header&text=Hey%20There,%20I'm%20urcauz!&fontSize=40&fontColor=ffffff&animation=fadeIn" alt="Typing Effect" />
-    </div>
+  <header>
+    <h1>Hey, I'm urcauz</h1>
+    <p class="typewriter">I break, build, and automate stuff — sometimes in that order.</p>
+  </header>
 
-    <h2 class="section-title">💫 About Me</h2>
-    <p class="text-center">
-      👋 Hey, I'm <strong>urcauz</strong> — welcome to my GitHub zone. I love crafting things with code, learning new tech, and connecting with curious minds.<br />
-      🔭 Building a productivity web app<br />
-      👯 Open to collab on browser extensions & TypeScript tools<br />
-      🤝 Always up to level up my design/UI game<br />
-      🌱 Deep-diving into Next.js, GraphQL, and full-stack best practices<br />
-      💬 Ask me anything JavaScript, side projects, or automation hacks<br />
-      ⚡ Fun fact: I have more half-baked projects than pairs of socks 👀
+  <section>
+    <h2>💫 About Me</h2>
+    <p>
+      I’m a full-stack dev with a thing for slick UIs, clever bots, and automating the boring stuff.
+      Currently exploring the edges of TypeScript, Next.js, and Discord automation.
     </p>
+  </section>
 
-    <h2 class="section-title">🌐 Socials</h2>
-    <div class="socials text-center">
-      <a href="https://discord.gg/uujW9psSvt">
-        <img src="https://img.shields.io/badge/Discord-%237289DA.svg?style=for-the-badge&logo=discord&logoColor=white" />
-      </a>
-      <a href="mailto:urcauzz@gmail.com">
-        <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
-      </a>
+  <section>
+    <h2>🚀 Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>💡 TaskForge</h3>
+        <p>A productivity app that gamifies your to-do list with a cyberpunk vibe. Built with React + Firebase.</p>
+      </div>
+      <div class="card">
+        <h3>🤖 AutoModX</h3>
+        <p>Next-gen Discord moderation bot with AI-based spam detection and multi-server analytics.</p>
+      </div>
+      <div class="card">
+        <h3>📦 PackStack</h3>
+        <p>A web app to organize your project files visually with drag-and-drop folders. Built with Next.js.</p>
+      </div>
+      <div class="card">
+        <h3>🔗 LinkVerse</h3>
+        <p>One-link bio site builder for creators with real-time preview and markdown support.</p>
+      </div>
     </div>
+  </section>
 
-    <h2 class="section-title">💻 Tech Stack</h2>
-    <div class="stack-icons">
-      <img src="https://skillicons.dev/icons?i=js,ts,react,nextjs,nodejs,tailwind,cpp,python,html,css,mysql,firebase,vite,figma,lightroom" />
-    </div>
+  <section>
+    <h2>📡 Contact & Links</h2>
+    <p><strong>GitHub:</strong> <a href="https://github.com/urcauz" target="_blank">github.com/urcauz</a></p>
+    <p><strong>Portfolio:</strong> <a href="https://urcauz.github.io" target="_blank">urcauz.github.io</a></p>
+    <p><strong>Email:</strong> <a href="mailto:urcauzz@gmail.com">urcauzz@gmail.com</a></p>
+    <p><strong>Discord:</strong> <code>ur_cauz</code></p>
+    <p><strong>Server:</strong> <a href="https://discord.gg/bnrWsaJ5y9" target="_blank">Join my server</a></p>
+  </section>
 
-    <h2 class="section-title">📊 GitHub Stats</h2>
-    <div class="text-center">
-      <img class="stats-img" src="https://github-readme-stats.vercel.app/api?username=urcauz&theme=tokyonight&show_icons=true&hide_border=false" />
-      <img class="stats-img" src="https://nirzak-streak-stats.vercel.app/?user=urcauz&theme=tokyonight&hide_border=false" />
-      <img class="langs-img" src="https://github-readme-stats.vercel.app/api/top-langs/?username=urcauz&theme=tokyonight&layout=compact&hide_border=false" />
-    </div>
-
-    <h2 class="section-title">🏆 GitHub Trophies</h2>
-    <div class="text-center">
-      <img class="trophies-img" src="https://github-profile-trophy.vercel.app/?username=urcauz&theme=tokyonight&margin-w=10&no-frame=true&no-bg=true" />
-    </div>
-
-    <h2 class="section-title">✍️ Dev Quote</h2>
-    <div class="text-center">
-      <img class="quote-img" src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight" />
-    </div>
-
-    <h2 class="section-title">🔝 Top Repo</h2>
-    <div class="text-center">
-      <img class="contrib-img" src="https://github-contributor-stats.vercel.app/api?username=urcauz&limit=5&theme=tokyonight&combine_all_yearly_contributions=true" />
-    </div>
-
-    <div class="text-center mt-4">
-      <img src="https://komarev.com/ghpvc/?username=urcauz&label=Profile+Views&color=7F3FBF&style=flat-square" alt="Profile Views" />
-    </div>
-
-    <h2 class="section-title">💰 Support Me</h2>
-    <div class="text-center">
-      <a href="https://paypal.me/Urcauz?country.x=IN&locale.x=en_GB">
-        <img src="https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white" />
-      </a>
-    </div>
-
-    <footer>
-      <!-- Crafted with GPRM -->
-      Proudly crafted with ✨ <a href="https://gprm.itsvg.in" target="_blank" style="color: #7f3fbf">GPRM</a>
-    </footer>
+  <div class="footer">
+    ⚡ Coded in caffeine & chaos. Built by urcauz.
   </div>
+
 </body>
 </html>
