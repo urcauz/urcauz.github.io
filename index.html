@@ -2,200 +2,122 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>urcauz | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body {
-      scroll-behavior: smooth;
-    }
     body {
-      font-family: 'Share Tech Mono', monospace;
-      background: #0d0d0d;
-      color: #fff;
+      background-color: #0f0f1b;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       overflow-x: hidden;
-      overflow-y: auto;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
     }
-    #bg-embed {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      z-index: -1;
-      filter: grayscale(1);
-      background: url('https://i.gifer.com/4Cb2.gif') center center / cover no-repeat;
-    }
-    header {
-      text-align: center;
-      padding: 30px 20px 10px;
-    }
-    h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 3rem;
-      color: #7b18de;
-      text-shadow: 0 0 10px #7b18de;
-      animation: glow 3s ease-in-out infinite alternate;
-    }
-    @keyframes glow {
-      from { text-shadow: 0 0 8px #7f3fbf; }
-      to { text-shadow: 0 0 20px #e600ff; }
-    }
-    .typewriter {
-      font-size: 1.5rem;
-      color: #a66ce0;
-      margin-top: 10px;
-      overflow: hidden;
-      white-space: nowrap;
-      border-right: 3px solid #7f3fbf;
-      animation: typing 5s steps(50, end) 1s forwards, blink 1s step-end infinite;
-      width: 0;
-      margin: auto;
-    }
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
-    }
-    @keyframes blink { 50% { border-color: transparent; } }
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
-      padding: 30px 0;
-      max-width: 1100px;
-      margin: auto;
-    }
-    .card {
-      background: rgba(0,0,0,0.8);
-      border: 1px solid #7b18de;
-      border-radius: 14px;
-      padding: 15px;
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      backdrop-filter: blur(2px);
-    }
-    .card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 0 20px #7f3fbf99;
-    }
-    .card h3 { color: #fff; font-size: 1rem; margin-bottom: 8px; }
-    .card p { color: #bbb; font-size: 0.8rem; }
-    .git-status {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 40px;
-      border-radius: 12px;
-      border: 1px solid #7f3fbf;
-      box-shadow: 0 0 10px rgba(255,255,255,0.1);
-      margin-top: 40px;
-      max-width: 1100px;
-      text-align: center;
-    }
-    .git-status::before {
-      content: "GitHub Status";
-      font-size: 1.4rem;
-      color: #7f3fbf;
-      text-shadow: 0 0 6px #7f3fbf;
-      grid-column: 1 / -1;
-      margin-bottom: 10px;
-    }
-    .git-status .stat {
-      background: #111;
-      border-radius: 10px;
-      padding: 15px;
-    }
-    .git-status .full-width {
-      grid-column: 1 / -1;
-    }
-    .git-status img {
+    .banner img {
       width: 100%;
-      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #7f3fbf;
     }
-    .contact-box {
-      background: rgba(0,0,0,0.7);
-      padding: 20px;
-      margin: 40px auto 20px;
-      border-radius: 12px;
-      border: 1px solid #7f3fbf;
-      max-width: 800px;
-      text-align: center;
-    }
-    .footer-box {
-      background: rgba(0,0,0,0.7);
-      padding: 20px;
-      margin: 0 auto 40px;
-      border-radius: 12px;
-      border: 1px solid #7f3fbf;
-      max-width: 800px;
-      text-align: center;
-    }
-    footer { text-align: center; padding: 10px; color: #777; font-size: 0.9rem; }
-    a { color: #7f3fbf; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .footer-line {
+    .section-title {
+      font-size: 2rem;
       color: #7f3fbf;
-      font-size: 1.1rem;
-      text-shadow: 0 0 8px #7f3fbf;
+      margin-top: 2rem;
+      text-align: center;
     }
-    @media (max-width: 1024px) {
-      .projects { grid-template-columns: repeat(2, 1fr); }
-      .git-status { grid-template-columns: 1fr; }
+    .stats-img, .langs-img, .trophies-img, .quote-img, .contrib-img {
+      width: 100%;
+      max-width: 400px;
+      margin: 10px;
+    }
+    .socials img {
+      margin: 10px;
+    }
+    .stack-icons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
-  <div id="bg-embed"></div>
-  <header>
-    <h1>&lt;/urcauz&gt;</h1>
-    <div class="typewriter">Full Stack Dev | All-Time Caffeined ☕</div>
-  </header>
-  <section class="projects">
-    <div class="card"><h3><i class="fa fa-comments"></i> Chat App</h3><p>Full-stack real-time messaging app.</p></div>
-    <div class="card"><h3><i class="fa fa-users"></i> Discord Clone</h3><p>Realtime voice + chat clone.</p></div>
-    <div class="card"><h3><i class="fa fa-cloud-sun"></i> Weather App</h3><p>Weather info from live APIs.</p></div>
-    <div class="card"><h3><i class="fa fa-laptop-code"></i> Portfolio</h3><p>This very portfolio site, built from scratch.</p></div>
-    <div class="card"><h3><i class="fa fa-tasks"></i> To-Do App</h3><p>Manage tasks in style.</p></div>
-    <div class="card"><h3><i class="fa fa-gamepad"></i> Snake Game</h3><p>Classic game built with Canvas.</p></div>
-    <div class="card"><h3><i class="fa fa-database"></i> API Server</h3><p>RESTful Node.js API with MongoDB.</p></div>
-    <div class="card"><h3><i class="fa fa-image"></i> Image Gallery</h3><p>Responsive dynamic gallery grid.</p></div>
-  </section>
+  <div class="container">
+    <div class="banner text-center my-3">
+      <img src="https://media.tenor.com/jE7XZ1Uqjq4AAAAd/night-city.gif" alt="Banner" />
+    </div>
 
-  <section class="git-status">
-    <div class="stat">
-      <h3>Current GitHub Stats:</h3>
-      <img src="https://github-readme-stats.vercel.app/api?username=urcauz&show_icons=true&theme=tokyonight" alt="GitHub Stats" />
+    <div class="text-center">
+      <img src="https://capsule-render.vercel.app/api?type=waving&color=7F3FBF&height=200&section=header&text=Hey%20There,%20I'm%20urcauz!&fontSize=40&fontColor=ffffff&animation=fadeIn" alt="Typing Effect" />
     </div>
-    <div class="stat">
-      <h3>Most Used Languages:</h3>
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=urcauz&layout=compact&theme=tokyonight" alt="Most Used Languages" />
-    </div>
-    <div class="stat full-width">
-      <h3>Contribution Streak:</h3>
-      <img src="https://github-readme-streak-stats.herokuapp.com/?user=urcauz&theme=tokyonight" alt="GitHub Contribution Streak" />
-    </div>
-    <div class="stat full-width">
-      <h3>Profile Views:</h3>
-      <img src="https://komarev.com/ghpvc/?username=urcauz&color=blue&style=flat" alt="Profile Views" />
-    </div>
-  </section>
 
-  <div class="contact-box">
-    <h2>📫 Contact</h2>
-    <p>Drop an email: <a href="mailto:urcauzz@gmail.com">urcauzz@gmail.com</a></p>
-    <p>Connect with Discord: <a href="https://discord.gg/twB3vrbB">Server Of Mine (Add me from there)</a></p>
+    <h2 class="section-title">💫 About Me</h2>
+    <p class="text-center">
+      👋 Hey, I'm <strong>urcauz</strong> — welcome to my GitHub zone. I love crafting things with code, learning new tech, and connecting with curious minds.<br />
+      🔭 Building a productivity web app<br />
+      👯 Open to collab on browser extensions & TypeScript tools<br />
+      🤝 Always up to level up my design/UI game<br />
+      🌱 Deep-diving into Next.js, GraphQL, and full-stack best practices<br />
+      💬 Ask me anything JavaScript, side projects, or automation hacks<br />
+      ⚡ Fun fact: I have more half-baked projects than pairs of socks 👀
+    </p>
+
+    <h2 class="section-title">🌐 Socials</h2>
+    <div class="socials text-center">
+      <a href="https://discord.gg/uujW9psSvt">
+        <img src="https://img.shields.io/badge/Discord-%237289DA.svg?style=for-the-badge&logo=discord&logoColor=white" />
+      </a>
+      <a href="mailto:urcauzz@gmail.com">
+        <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
+      </a>
+    </div>
+
+    <h2 class="section-title">💻 Tech Stack</h2>
+    <div class="stack-icons">
+      <img src="https://skillicons.dev/icons?i=js,ts,react,nextjs,nodejs,tailwind,cpp,python,html,css,mysql,firebase,vite,figma,lightroom" />
+    </div>
+
+    <h2 class="section-title">📊 GitHub Stats</h2>
+    <div class="text-center">
+      <img class="stats-img" src="https://github-readme-stats.vercel.app/api?username=urcauz&theme=tokyonight&show_icons=true&hide_border=false" />
+      <img class="stats-img" src="https://nirzak-streak-stats.vercel.app/?user=urcauz&theme=tokyonight&hide_border=false" />
+      <img class="langs-img" src="https://github-readme-stats.vercel.app/api/top-langs/?username=urcauz&theme=tokyonight&layout=compact&hide_border=false" />
+    </div>
+
+    <h2 class="section-title">🏆 GitHub Trophies</h2>
+    <div class="text-center">
+      <img class="trophies-img" src="https://github-profile-trophy.vercel.app/?username=urcauz&theme=tokyonight&margin-w=10&no-frame=true&no-bg=true" />
+    </div>
+
+    <h2 class="section-title">✍️ Dev Quote</h2>
+    <div class="text-center">
+      <img class="quote-img" src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight" />
+    </div>
+
+    <h2 class="section-title">🔝 Top Repo</h2>
+    <div class="text-center">
+      <img class="contrib-img" src="https://github-contributor-stats.vercel.app/api?username=urcauz&limit=5&theme=tokyonight&combine_all_yearly_contributions=true" />
+    </div>
+
+    <div class="text-center mt-4">
+      <img src="https://komarev.com/ghpvc/?username=urcauz&label=Profile+Views&color=7F3FBF&style=flat-square" alt="Profile Views" />
+    </div>
+
+    <h2 class="section-title">💰 Support Me</h2>
+    <div class="text-center">
+      <a href="https://paypal.me/Urcauz?country.x=IN&locale.x=en_GB">
+        <img src="https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white" />
+      </a>
+    </div>
+
+    <footer>
+      <!-- Crafted with GPRM -->
+      Proudly crafted with ✨ <a href="https://gprm.itsvg.in" target="_blank" style="color: #7f3fbf">GPRM</a>
+    </footer>
   </div>
-
-  <div class="footer-box">
-    <p class="footer-line">Thanks For Reading all the way! You get a cookie 🍪</p>
-  </div>
-
-  <footer></footer>
 </body>
 </html>
